@@ -1,0 +1,15 @@
+@import "susy";
+
+$container-style	: fluid;
+$total-columns 		: 4;
+
+$break : 768px;
+
+@mixin respond-to() {
+  
+  @include with-grid-settings(14,46px,9px,0) {
+    @media only screen and (min-width: $break) {
+      @content;
+    }
+  }
+}

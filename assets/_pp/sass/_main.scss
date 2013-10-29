@@ -1,0 +1,79 @@
+body {
+	color: $dkText;
+	font-family: $meta;
+}
+
+header, footer {
+	background: $header;
+}
+
+header {
+	overflow: hidden;
+	@include transition;
+
+	.icon-andimal {
+		margin: rem(-25) 0 rem(-30) rem(-10);
+		color: lighten($header, 10%);
+		font-size: rem(100);
+	}
+}
+
+header:hover {
+	background: lighten($header, 3%);
+	@include transition;
+}
+
+footer {
+	text-align: center;
+	padding: rem(20) rem(10);
+
+	a {
+		color: #CCC;
+		padding: rem(10) 2.5%;
+		font-size: rem(20);
+		@include transition;
+	}
+
+	a:hover {
+		color: white;
+		@include transition;
+	}
+
+	.first {
+		padding-left: 0;
+	}
+
+	.last {
+		padding-right: 0;
+	}
+
+	.icon-mail {
+		position: relative;
+		top: rem(-2);
+		font-size: .9em;
+	}
+
+	.home-link {
+		padding: 0;
+	}
+
+	.icon-andimal {
+		display: block;
+		padding-top: rem(15);
+
+		strong {
+			position: relative;
+			top: rem(-3);
+			font-family: $meta;
+			font-weight: 700;
+			font-size: 0.75em;
+			padding-left: rem(7);
+		}
+	}
+}
+
+@include respond-to() {
+
+	
+
+}
