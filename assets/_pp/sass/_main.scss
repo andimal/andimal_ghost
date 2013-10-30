@@ -3,11 +3,11 @@ body {
 	font-family: $meta;
 }
 
-header, footer {
+.site-header, footer {
 	background: $header;
 }
 
-header {
+.site-header {
 	overflow: hidden;
 	@include transition;
 
@@ -18,9 +18,38 @@ header {
 	}
 }
 
-header:hover {
+.site-header:hover {
 	background: lighten($header, 3%);
 	@include transition;
+}
+
+main {
+	@include container;
+	// @include susy-grid-background;
+
+	article {
+		padding: rem(40) gutter(4);
+		border-bottom: 1px solid lighten($dkText, 60%);
+		margin: 0 ( gutter(4) * -1 );
+	}
+
+	.post-title {
+		font-size: rem(30);
+		padding-bottom: rem(20);
+	}
+
+	.post-meta {
+		float: left;
+		font-size: rem(17);
+		color: lighten($dkText, 40%);
+	}
+}
+
+.tag {
+	background-color: $dkText;
+	color: white;
+	padding: rem(2) rem(6);
+	@include border-radius;
 }
 
 footer {
@@ -74,6 +103,6 @@ footer {
 
 @include respond-to() {
 
-	
+
 
 }
