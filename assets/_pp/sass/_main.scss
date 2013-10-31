@@ -1,19 +1,20 @@
 body {
-	background-color: #FAFAF7;
+	background-color: $background;
 	color: $dkText;
 	font-family: $meta;
 }
 
 ::selection {
-	background-color: #FFC65C;
+	background-color: lighten($orange, 10%);
 }
 
 ::-moz-selection {
-	background-color: #FFC65C;
+	background-color: lighten($orange, 10%);
 }
 
 .site-header, footer {
 	background: $header;
+	width: 100%;
 }
 
 .site-header {
@@ -43,31 +44,61 @@ body {
 	}
 }
 
-.site-header:hover .icon-andimal {
+.home-template .icon-andimal {
+	cursor: default;
+}
+
+.post-template .site-header:hover .icon-andimal {
 	color: lighten($header, 15%);
 	@include transition;
+}
+
+.home-template .post-link {
+	@include transition;
+
+	&:hover {
+		background-color: white;
+		@include transition;
+
+		.post-title {
+			color: $orange;
+			@include transition;
+		}
+	}
 }
 
 main {
 	@include container;
 	// @include susy-grid-background;
+}
 
-	article {
-		padding: rem(40) gutter(4);
-		border-bottom: 1px solid lighten($dkText, 60%);
-		margin: 0 ( gutter(4) * -1 );
-	}
+article {
+	padding: rem(40) 0;
+	border-bottom: 1px solid lighten($dkText, 60%);
+}
 
-	.post-title {
-		font-size: rem(30);
-		padding-bottom: rem(20);
-	}
+.home-template article {
+	margin: 0 ( gutter(4) * -1 );
+	padding: rem(40) gutter(4);
+}
 
-	.post-meta {
-		float: left;
-		font-size: rem(17);
-		color: lighten($dkText, 40%);
-	}
+.post-title {
+	clear: both;
+	font-size: rem(30);
+	font-weight: 600;
+	padding-bottom: rem(20);
+	@include transition;
+}
+
+.post-template .post-title {
+	padding-top: rem(20);
+	padding-bottom: 0;
+}
+
+.post-meta {
+	float: left;
+	font-size: rem(17);
+	color: lighten($dkText, 40%);
 }
 
 .tags {
@@ -76,11 +107,17 @@ main {
 }
 
 .tag {
-	background-color: lighten($dkText, 20%);
+	background-color: $orange;
 	color: white;
 	font-size: .8em;
 	padding: rem(3) rem(6) rem(4) rem(6);
 	@include border-radius;
+}
+
+.post-content p {
+	margin: rem(20) 0;
+	font-size: rem(17);
+	line-height: 150%;
 }
 
 footer {
@@ -162,6 +199,44 @@ footer {
 
 @include respond-to() {
 
+	.site-header {
+		position: fixed;
+		border-bottom: rem(2) solid $background;
+	}
 
+	main {
+		@include container;
+		// @include susy-grid-background;
+		padding-top: rem(45);
+	}
+
+	.home-template article {
+		margin: 0;
+		padding-top: rem(50);
+		padding-bottom: rem(50);
+	}
+
+	.post-link .post {
+		padding-left: columns(3,14) + gutter(14);
+		padding-right: columns(3,14) + gutter(14);
+	}
+
+	.post-template {
+		
+		article {
+			padding-left: columns(2,14) + gutter(14);
+			padding-right: columns(2,14) + gutter(14);
+		}
+
+		.post-title {
+			font-size: rem(45);
+			line-height: 110%;
+		}
+
+		.post-content p {
+			font-size: rem(20);
+			line-height: 170%;
+		}
+	}
 
 }
