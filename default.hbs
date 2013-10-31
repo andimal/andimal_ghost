@@ -25,18 +25,24 @@
 <body class="{{body_class}}">
 
     <header class="site-header">
-        <a href="<?php echo site_url(); ?>"><div class="icon-andimal"></div></a>
+        <a href="{{@blog.url}}"><div class="icon-andimal"></div></a>
+        <a class="icon-feed icon-link" href="{{@blog.url}}/rss/"></a>
     </header>
 
         {{! Everything else gets inserted here }}
         {{{body}}}
 
     <footer class="site-footer">
-        <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
-        <div class="inner">
-             <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2013 &bull; All rights reserved.</section>
-             <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://ghost.org">Ghost</a></section>
-        </div>
+        <a class="icon-mail first" title="andy@andimal.co" href="mailto:andy@andimal.co"></a>
+        <a class="icon-twitter" title="@and1mal" href="http://twitter.com/and1mal"></a>
+        <a class="icon-github" title="andimal on github" href="http://github.com/andimal"></a>
+        <a class="icon-tumblr" title="tumblr: andyontheinterwebs.com" href="http://andyontheinterwebs.com"></a>
+        <a class="icon-instagram" title="@andimal" href="http://instagram.com/andimal"></a>
+        <a class="icon-rdio" title="andimal on rdio" href="http://www.rdio.com/people/andimal/"></a>
+        <a class="icon-bike" title="strava" href="http://app.strava.com/athletes/66649"></a>
+        <a class="icon-dribbble last" title="andimal on dribbble" href="http://dribbble.com/andimal"></a>
+        <a class="home-link" href="{{@blog.url}}"><h1 class="icon-andimal"><strong>Andy Richardson</strong></h1></a>
+        <a class="poweredby" href="http://ghost.org">Proudly published with <span class="icon-ghost">Ghost</span></a>
     </footer>
 
     {{! Ghost outputs important scripts and data with this tag }}

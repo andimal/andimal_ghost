@@ -1,6 +1,15 @@
 body {
+	background-color: #FAFAF7;
 	color: $dkText;
 	font-family: $meta;
+}
+
+::selection {
+	background-color: #FFC65C;
+}
+
+::-moz-selection {
+	background-color: #FFC65C;
 }
 
 .site-header, footer {
@@ -8,6 +17,7 @@ body {
 }
 
 .site-header {
+	position: relative;
 	overflow: hidden;
 	@include transition;
 
@@ -15,11 +25,26 @@ body {
 		margin: rem(-25) 0 rem(-30) rem(-10);
 		color: lighten($header, 10%);
 		font-size: rem(100);
+		@include transition;
+	}
+
+	.icon-link {
+		position: absolute;
+		top: 50%;
+		right: rem(10);
+		margin-top: -0.5em;
+		color: #CCC;
+		@include transition;
+	}
+
+	.icon-link:hover {
+		color: white;
+		@include transition;
 	}
 }
 
-.site-header:hover {
-	background: lighten($header, 3%);
+.site-header:hover .icon-andimal {
+	color: lighten($header, 15%);
 	@include transition;
 }
 
@@ -45,10 +70,16 @@ main {
 	}
 }
 
+.tags {
+	float: left;
+	margin-left: rem(5);
+}
+
 .tag {
-	background-color: $dkText;
+	background-color: lighten($dkText, 20%);
 	color: white;
-	padding: rem(2) rem(6);
+	font-size: .8em;
+	padding: rem(3) rem(6) rem(4) rem(6);
 	@include border-radius;
 }
 
@@ -98,6 +129,34 @@ footer {
 			font-size: 0.75em;
 			padding-left: rem(7);
 		}
+	}
+
+	.poweredby {
+		display: block;
+		font-size: .8em;
+		font-weight: 700;
+		color: #666;
+		margin-top: rem(15);
+		
+		.icon-ghost {
+			color: inherit;
+			font-weight: inherit;
+			text-decoration: none;
+			padding-left: rem(5);
+		}
+
+		.icon-ghost:hover {
+			text-decoration: none;
+		}
+
+		.icon-ghost:before {
+			margin-right: 0.2em;
+		}
+
+		&:hover {
+			color: #CCC;
+		}
+
 	}
 }
 
