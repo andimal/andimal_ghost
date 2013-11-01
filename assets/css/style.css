@@ -178,10 +178,6 @@ body {
     -ms-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s; }
-  .site-header .caption {
-    top: 2.1875rem; }
-  .site-header .icon:hover .caption {
-    top: 1.5625rem; }
   .site-header .icon-link:hover {
     color: white;
     -webkit-transition: all 0.2s;
@@ -252,14 +248,16 @@ article {
   -o-transition: all 0.2s;
   transition: all 0.2s; }
 
-.post-template .post-title {
-  padding-top: 1.25rem;
-  padding-bottom: 0; }
-
 .post-meta {
   float: left;
   font-size: 1.0625rem;
   color: #ababab; }
+
+.post-template .post-title {
+  padding-top: 1.25rem;
+  padding-bottom: 2.5rem; }
+.post-template .post-meta, .post-template .tags {
+  padding-top: 1.875rem; }
 
 .tags {
   float: left;
@@ -287,6 +285,9 @@ article {
 .icon {
   position: relative;
   display: inline; }
+
+.caption {
+  display: none; }
 
 footer {
   text-align: center;
@@ -349,6 +350,12 @@ footer {
   .site-header {
     position: fixed;
     border-bottom: 0.125rem solid #fafaf7; }
+    .site-header .caption {
+      top: 2.1875rem; }
+    .site-header .icon:hover .caption {
+      top: 1.5625rem; }
+    .site-header .rss .caption {
+      margin-left: -0.625rem; }
 
   main {
     *zoom: 1;
@@ -412,9 +419,10 @@ footer {
     padding-left: 1.75%; }
 
   .caption {
+    display: block;
     position: absolute;
     top: -2.5rem;
-    left: 0%;
+    left: 0;
     background-color: #de9a1d;
     padding: 0.3125rem 0.625rem;
     font-family: "ff-meta-web-pro";
@@ -439,8 +447,13 @@ footer {
   .icon:hover .caption {
     top: -1.875rem;
     opacity: 1;
+    cursor: pointer;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -ms-transition: all 0.2s;
     -o-transition: all 0.2s;
-    transition: all 0.2s; } }
+    transition: all 0.2s; }
+
+  footer .first, footer .last {
+    padding-right: 1.75%;
+    padding-left: 1.75%; } }

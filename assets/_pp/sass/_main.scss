@@ -42,14 +42,6 @@ body {
 		@include transition;
 	}
 
-	.caption {
-		top: rem(35);
-	}
-
-	.icon:hover .caption {
-		top: rem(25);
-	}
-
 	.icon-link:hover {
 		color: white;
 		@include transition;
@@ -102,15 +94,22 @@ article {
 	@include transition;
 }
 
-.post-template .post-title {
-	padding-top: rem(20);
-	padding-bottom: 0;
-}
-
 .post-meta {
 	float: left;
 	font-size: rem(17);
 	color: lighten($dkText, 40%);
+}
+
+.post-template {
+
+	.post-title {
+		padding-top: rem(20);
+		padding-bottom: rem(40);
+	}
+
+	.post-meta, .tags {
+		padding-top: rem(30);
+	}
 }
 
 .tags {
@@ -139,6 +138,10 @@ article {
 .icon {
 	position: relative;
 	display: inline;
+}
+
+.caption {
+	display: none;
 }
 
 footer {
@@ -223,6 +226,18 @@ footer {
 	.site-header {
 		position: fixed;
 		border-bottom: rem(2) solid $background;
+
+		.caption {
+			top: rem(35);
+		}
+
+		.icon:hover .caption {
+			top: rem(25);
+		}
+
+		.rss .caption {
+			margin-left: rem(-10);
+		}
 	}
 
 	main {
@@ -286,9 +301,10 @@ footer {
 	}
 
 	.caption {
+		display: block;
 		position: absolute;
 		top: rem(-40);
-		left: 0%;
+		left: 0;
 		background-color: $orange;
 		padding: rem(5) rem(10);
 		font-family: $meta;
@@ -304,7 +320,15 @@ footer {
 	.icon:hover .caption {
 		top: rem(-30);
 		opacity: 1;
+		cursor: pointer;
 		@include transition;
+	}
+
+	footer {
+		.first, .last {
+			padding-right: 1.75%;
+			padding-left: 1.75%;
+		}
 	}
 
 }

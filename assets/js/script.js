@@ -1,1 +1,1 @@
-(function(){}).call(this);
+(function(){$(window).load(function(){return $(".caption").each(function(){var e,t;t=$(this).parent().find("a").outerWidth();e=$(this).outerWidth();return $(this).css("left",-(e/2-t/2))})})}).call(this);
