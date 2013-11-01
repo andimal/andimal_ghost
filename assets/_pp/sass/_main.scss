@@ -19,8 +19,12 @@ body {
 
 .site-header {
 	position: relative;
-	overflow: hidden;
 	@include transition;
+
+	.home-link {
+		display: block;
+		overflow: hidden;
+	}
 
 	.icon-andimal {
 		margin: rem(-25) 0 rem(-30) rem(-10);
@@ -29,7 +33,7 @@ body {
 		@include transition;
 	}
 
-	.icon-link {
+	.icon {
 		position: absolute;
 		top: 50%;
 		right: rem(10);
@@ -38,13 +42,21 @@ body {
 		@include transition;
 	}
 
+	.caption {
+		top: rem(35);
+	}
+
+	.icon:hover .caption {
+		top: rem(25);
+	}
+
 	.icon-link:hover {
 		color: white;
 		@include transition;
 	}
 }
 
-.home-template .icon-andimal {
+.home-template header .icon-andimal {
 	cursor: default;
 }
 
@@ -106,6 +118,10 @@ article {
 	margin-left: rem(5);
 }
 
+.post-excerpt {
+	display: none;
+}
+
 .tag {
 	background-color: $orange;
 	color: white;
@@ -118,6 +134,11 @@ article {
 	margin: rem(20) 0;
 	font-size: rem(17);
 	line-height: 150%;
+}
+
+.icon {
+	position: relative;
+	display: inline;
 }
 
 footer {
@@ -221,11 +242,31 @@ footer {
 		padding-right: columns(3,14) + gutter(14);
 	}
 
+	.post-excerpt {
+		display: block;
+		clear: both;
+		font-size: rem(17);
+		line-height: 150%;
+		padding-top: 0;
+		max-height: 0;
+		opacity: 0;
+		overflow: hidden;
+		@include transition;
+	}
+
+	.post-link:hover .post-excerpt {
+		padding-top: rem(20);
+		max-height: 500px;
+		opacity: 1;
+		@include transition;
+	}
+
 	.post-template {
 		
 		article {
 			padding-left: columns(2,14) + gutter(14);
 			padding-right: columns(2,14) + gutter(14);
+			max-width: rem(1280);
 		}
 
 		.post-title {
@@ -237,6 +278,33 @@ footer {
 			font-size: rem(20);
 			line-height: 170%;
 		}
+	}
+
+	footer a {
+		padding-right: 1.75%;
+		padding-left: 1.75%;
+	}
+
+	.caption {
+		position: absolute;
+		top: rem(-40);
+		left: 0%;
+		background-color: $orange;
+		padding: rem(5) rem(10);
+		font-family: $meta;
+		font-size: .9em;
+		font-weight: 500;
+		color: white;
+		opacity: 0;
+		@include border-radius;
+		@include box-shadow;
+		@include transition;
+	}
+
+	.icon:hover .caption {
+		top: rem(-30);
+		opacity: 1;
+		@include transition;
 	}
 
 }
