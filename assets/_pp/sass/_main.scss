@@ -107,6 +107,10 @@ body {
 			@include transition;
 		}
 	}
+
+	.post {
+		@extend .group;
+	}
 }
 
 main {
@@ -122,7 +126,7 @@ article {
 
 .home-template article {
 	margin: 0 ( gutter(4) * -1 );
-	padding: rem(40) gutter(4);
+	padding: rem(40) gutter(4) rem(23) gutter(4);
 }
 
 .post-title {
@@ -137,6 +141,14 @@ article {
 	float: left;
 	font-size: rem(17);
 	color: lighten($dkText, 40%);
+	margin: 0 rem(10) 0 0;
+}
+
+.home-template {
+
+	.post-meta {
+		margin-bottom: rem(25);
+	}
 }
 
 .post-template {
@@ -152,8 +164,9 @@ article {
 }
 
 .tags {
+	@extend .group;
 	float: left;
-	margin-left: rem(5);
+	margin: 0 0 rem(17) rem(-3);
 }
 
 .post-excerpt {
@@ -161,9 +174,11 @@ article {
 }
 
 .tag {
+	float: left;
 	background-color: $orange;
 	color: white;
 	font-size: .8em;
+	margin: 0 rem(3) rem(5) rem(3);
 	padding: rem(3) rem(6) rem(4) rem(6);
 	@include border-radius;
 }
@@ -290,7 +305,7 @@ footer {
 	.home-template article {
 		margin: 0;
 		padding-top: rem(50);
-		padding-bottom: rem(50);
+		padding-bottom: rem(33);
 	}
 
 	.post-link .post {

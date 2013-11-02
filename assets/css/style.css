@@ -50,7 +50,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-.group:after {
+.group:after, .home-template .post-link .post:after, .tags:after {
   content: "";
   display: table;
   clear: both; }
@@ -273,7 +273,7 @@ article {
 
 .home-template article {
   margin: 0 -5.26316%;
-  padding: 2.5rem 5.26316%; }
+  padding: 2.5rem 5.26316% 1.4375rem 5.26316%; }
 
 .post-title {
   clear: both;
@@ -289,7 +289,11 @@ article {
 .post-meta {
   float: left;
   font-size: 1.0625rem;
-  color: #ababab; }
+  color: #ababab;
+  margin: 0 0.625rem 0 0; }
+
+.home-template .post-meta {
+  margin-bottom: 1.5625rem; }
 
 .post-template .post-title {
   padding-top: 1.25rem;
@@ -299,15 +303,17 @@ article {
 
 .tags {
   float: left;
-  margin-left: 0.3125rem; }
+  margin: 0 0 1.0625rem -0.1875rem; }
 
 .post-excerpt {
   display: none; }
 
 .tag {
+  float: left;
   background-color: #de9a1d;
   color: white;
   font-size: .8em;
+  margin: 0 0.1875rem 0.3125rem 0.1875rem;
   padding: 0.1875rem 0.375rem 0.25rem 0.375rem;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -408,7 +414,7 @@ footer {
   .home-template article {
     margin: 0;
     padding-top: 3.125rem;
-    padding-bottom: 3.125rem; }
+    padding-bottom: 2.0625rem; }
 
   .post-link .post {
     padding-left: 21.682%;
