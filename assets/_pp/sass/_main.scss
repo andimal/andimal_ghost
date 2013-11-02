@@ -110,6 +110,7 @@ body {
 }
 
 main {
+	display: block;
 	@include container;
 	// @include susy-grid-background;
 }
@@ -347,7 +348,7 @@ footer {
 		top: rem(-35);
 		left: 0;
 		background-color: $orange;
-		padding: rem(5) rem(10);
+		padding: rem(5) rem(10) rem(7) rem(10);
 		font-family: $meta;
 		font-size: rem(15);
 		font-weight: 500;

@@ -104,7 +104,8 @@ img {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 .icon-twitter:before {
   content: "\74"; }
@@ -255,6 +256,7 @@ body {
       transition: all 0.2s; }
 
 main {
+  display: block;
   *zoom: 1;
   padding-left: 1em;
   padding-right: 1em;
@@ -459,7 +461,7 @@ footer {
     top: -2.1875rem;
     left: 0;
     background-color: #de9a1d;
-    padding: 0.3125rem 0.625rem;
+    padding: 0.3125rem 0.625rem 0.4375rem 0.625rem;
     font-family: "ff-meta-web-pro";
     font-size: 0.9375rem;
     font-weight: 500;
