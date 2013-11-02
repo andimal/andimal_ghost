@@ -96,7 +96,7 @@ img {
   font-weight: normal;
   font-style: normal; }
 
-.icon-twitter, .icon-github, .icon-dribbble, .icon-tumblr, .icon-mail, .icon-instagram, .icon-rdio, .icon-bike, .icon-andimal {
+.icon-twitter, .icon-github, .icon-dribbble, .icon-tumblr, .icon-mail, .icon-instagram, .icon-rdio, .icon-bike, .icon-andimal, .icon-triangle {
   font-family: 'andimal';
   speak: none;
   font-style: normal;
@@ -133,6 +133,9 @@ img {
 .icon-andimal:before {
   content: "\61"; }
 
+.icon-triangle-icon:before {
+  content: "\5e"; }
+
 body {
   background-color: #fafaf7;
   color: #454545;
@@ -147,6 +150,14 @@ body {
 .site-header, footer {
   background: #454545;
   width: 100%; }
+
+.icon:hover p {
+  color: white;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s; }
 
 .site-header {
   position: relative;
@@ -169,22 +180,20 @@ body {
     transition: all 0.2s; }
   .site-header .icon {
     position: absolute;
-    top: 50%;
-    right: 0.625rem;
-    margin-top: -0.5em;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 0 0.625rem;
     color: #CCC;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -ms-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s; }
-  .site-header .icon-link:hover {
-    color: white;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -ms-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s; }
+  .site-header .icon-link {
+    position: relative;
+    top: 50%;
+    margin-top: -0.5em; }
 
 .home-template header .icon-andimal {
   cursor: default; }
@@ -284,7 +293,7 @@ article {
 
 .icon {
   position: relative;
-  display: inline; }
+  display: inline-block; }
 
 .caption {
   display: none; }
@@ -294,15 +303,8 @@ footer {
   padding: 1.25rem 0.625rem; }
   footer a {
     color: #CCC;
-    padding: 0.625rem 2.5%;
+    padding: 0.9375rem 2.5%;
     font-size: 1.25rem;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -ms-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s; }
-  footer a:hover {
-    color: white;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -ms-transition: all 0.2s;
@@ -315,7 +317,7 @@ footer {
   footer .icon-mail {
     position: relative;
     top: -0.125rem;
-    font-size: .9em; }
+    font-size: .8em; }
   footer .home-link {
     padding: 0; }
   footer .icon-andimal {
@@ -351,9 +353,14 @@ footer {
     position: fixed;
     border-bottom: 0.125rem solid #fafaf7; }
     .site-header .caption {
-      top: 2.1875rem; }
+      top: 3.4375rem;
+      left: -0.25rem; }
+    .site-header .caption:before {
+      top: -0.5rem;
+      bottom: auto;
+      left: 65%; }
     .site-header .icon:hover .caption {
-      top: 1.5625rem; }
+      top: 2.8125rem; }
     .site-header .rss .caption {
       margin-left: -0.625rem; }
 
@@ -420,8 +427,9 @@ footer {
 
   .caption {
     display: block;
+    visibility: hidden;
     position: absolute;
-    top: -2.5rem;
+    top: -2.1875rem;
     left: 0;
     background-color: #de9a1d;
     padding: 0.3125rem 0.625rem;
@@ -429,7 +437,6 @@ footer {
     font-size: .9em;
     font-weight: 500;
     color: white;
-    opacity: 0;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
@@ -437,16 +444,24 @@ footer {
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 5px #333333;
     -moz-box-shadow: 0px 0px 5px #333333;
-    box-shadow: 0px 0px 5px #333333;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -ms-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s; }
+    box-shadow: 0px 0px 5px #333333; }
+
+  .caption:before {
+    content: "\5e";
+    position: absolute;
+    top: auto;
+    bottom: -0.5rem;
+    left: 50%;
+    color: #de9a1d;
+    font-family: andimal;
+    font-size: 0.625rem;
+    margin-left: -0.3125rem;
+    text-shadow: 0 0 0.625rem black;
+    clip: rect(-1.25rem 1.25rem 0.5rem -0.625rem); }
 
   .icon:hover .caption {
-    top: -1.875rem;
-    opacity: 1;
+    visibility: visible;
+    top: -1.5625rem;
     cursor: pointer;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
@@ -456,4 +471,12 @@ footer {
 
   footer .first, footer .last {
     padding-right: 1.75%;
-    padding-left: 1.75%; } }
+    padding-left: 1.75%; }
+  footer .caption {
+    font-size: .75em; }
+  footer .caption:before {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg); } }

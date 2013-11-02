@@ -17,6 +17,11 @@ body {
 	width: 100%;
 }
 
+.icon:hover p {
+	color: white;
+	@include transition;
+}
+
 .site-header {
 	position: relative;
 	@include transition;
@@ -35,16 +40,18 @@ body {
 
 	.icon {
 		position: absolute;
-		top: 50%;
-		right: rem(10);
-		margin-top: -0.5em;
+		top: 0;
+		right: 0;
+		height: 100%;
+		padding: 0 rem(10);
 		color: #CCC;
 		@include transition;
 	}
 
-	.icon-link:hover {
-		color: white;
-		@include transition;
+	.icon-link {
+		position: relative;
+		top: 50%;
+		margin-top: -0.5em;
 	}
 }
 
@@ -137,7 +144,7 @@ article {
 
 .icon {
 	position: relative;
-	display: inline;
+	display: inline-block;
 }
 
 .caption {
@@ -150,13 +157,8 @@ footer {
 
 	a {
 		color: #CCC;
-		padding: rem(10) 2.5%;
+		padding: rem(15) 2.5%;
 		font-size: rem(20);
-		@include transition;
-	}
-
-	a:hover {
-		color: white;
 		@include transition;
 	}
 
@@ -171,7 +173,7 @@ footer {
 	.icon-mail {
 		position: relative;
 		top: rem(-2);
-		font-size: .9em;
+		font-size: .8em;
 	}
 
 	.home-link {
@@ -228,11 +230,18 @@ footer {
 		border-bottom: rem(2) solid $background;
 
 		.caption {
-			top: rem(35);
+			top: rem(55);
+			left: rem(-4);
+		}
+
+		.caption:before {
+			top: rem(-8);
+			bottom: auto;
+			left: 65%;
 		}
 
 		.icon:hover .caption {
-			top: rem(25);
+			top: rem(45);
 		}
 
 		.rss .caption {
@@ -302,8 +311,9 @@ footer {
 
 	.caption {
 		display: block;
+		visibility: hidden;
 		position: absolute;
-		top: rem(-40);
+		top: rem(-35);
 		left: 0;
 		background-color: $orange;
 		padding: rem(5) rem(10);
@@ -311,15 +321,30 @@ footer {
 		font-size: .9em;
 		font-weight: 500;
 		color: white;
-		opacity: 0;
+		// opacity: 0;
 		@include border-radius;
 		@include box-shadow;
-		@include transition;
+		// @include transition;
+	}
+
+	.caption:before {
+		content: "\5e";
+		position: absolute;
+		top: auto;
+		bottom: rem(-8);
+		left: 50%;
+		color: $orange;
+		font-family: andimal;
+		font-size: rem(10);
+		margin-left: rem(-5);
+		text-shadow: 0 0 rem(10) #000;
+		clip: rect( rem(-20) rem(20) rem(8) rem(-10) );
 	}
 
 	.icon:hover .caption {
-		top: rem(-30);
-		opacity: 1;
+		visibility: visible;
+		top: rem(-25);
+		// opacity: 1;
 		cursor: pointer;
 		@include transition;
 	}
@@ -328,6 +353,14 @@ footer {
 		.first, .last {
 			padding-right: 1.75%;
 			padding-left: 1.75%;
+		}
+
+		.caption {
+			font-size: .75em;
+		}
+
+		.caption:before {
+			@include rotate(180deg);	
 		}
 	}
 

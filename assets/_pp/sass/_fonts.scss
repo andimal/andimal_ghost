@@ -39,7 +39,7 @@
 	font-style: normal;
 }
 
-.icon-twitter, .icon-github, .icon-dribbble, .icon-tumblr, .icon-mail, .icon-instagram, .icon-rdio, .icon-bike, .icon-andimal {
+.icon-twitter, .icon-github, .icon-dribbble, .icon-tumblr, .icon-mail, .icon-instagram, .icon-rdio, .icon-bike, .icon-andimal, .icon-triangle {
 	font-family: 'andimal';
 	speak: none;
 	font-style: normal;
@@ -75,4 +75,7 @@
 }
 .icon-andimal:before {
 	content: "\61";
+}
+.icon-triangle-icon:before {
+	content: "\5e";
 }
