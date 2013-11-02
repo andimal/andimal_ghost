@@ -133,7 +133,7 @@ img {
 .icon-andimal:before {
   content: "\61"; }
 
-.icon-triangle-icon:before {
+.icon-triangle:before {
   content: "\5e"; }
 
 body {
@@ -178,10 +178,25 @@ body {
     -ms-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s; }
-  .site-header .icon {
+  .site-header .header-icons {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -2.25rem;
+    height: 100%;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s; }
+  .site-header .show-to-top {
+    right: 0.3125rem;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s; }
+  .site-header .icon {
+    top: -0.5em;
     height: 100%;
     padding: 0 0.625rem;
     color: #CCC;
@@ -190,6 +205,10 @@ body {
     -ms-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s; }
+  .site-header .to-top {
+    cursor: pointer; }
+    .site-header .to-top .icon-triangle {
+      font-size: .75em; }
   .site-header .icon-link {
     position: relative;
     top: 50%;

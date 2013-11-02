@@ -38,14 +38,33 @@ body {
 		@include transition;
 	}
 
-	.icon {
+	.header-icons {
 		position: absolute;
 		top: 0;
-		right: 0;
+		right: rem(-36);
+		height: 100%;
+		@include transition;
+	}
+
+	.show-to-top {
+		right: rem(5);
+		@include transition;
+	}
+
+	.icon {
+		top: -0.5em;
 		height: 100%;
 		padding: 0 rem(10);
 		color: #CCC;
 		@include transition;
+	}
+
+	.to-top {
+		cursor: pointer;
+
+		.icon-triangle {
+			font-size: .75em;
+		}
 	}
 
 	.icon-link {

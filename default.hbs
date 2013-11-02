@@ -25,10 +25,17 @@
     <header class="site-header">
         <a class="home-link" href="{{@blog.url}}"><div class="icon-andimal"></div></a>
 
-        <a class="icon rss" href="{{@blog.url}}rss/">
-            <p class="icon-feed icon-link"></p>
-            <p class="caption">RSS</p>
-        </a>
+        <div class="header-icons">
+            <a class="icon rss" href="{{@blog.url}}rss/">
+                <p class="icon-feed icon-link"></p>
+                <p class="caption">RSS</p>
+            </a>
+
+            <div class="icon to-top">
+                <p class="icon-triangle icon-link"></p>
+                <p class="caption">top</p>
+            </div>
+        </div>
     </header>
 
         {{{body}}}
