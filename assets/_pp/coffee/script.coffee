@@ -1,4 +1,28 @@
+gifViewer = ($span, href) ->
+	$viewer = 	$('<div class="gif-viewer">' +
+								'<img src="' + href + '" />' +
+							'</div>')
+	$('body').append($viewer)
+	
+	setViewerPosition = ->
+		$viewer.css
+			top		: $span.offset().top - $viewer.outerHeight()
+			left	: $span.offset().left - ( $viewer.outerWidth() / 2 ) + ( $span.outerWidth() / 2 )
+
+	setViewerPosition()
+
+	$(window).resize ->
+		setViewerPosition()
+	
+	$span.hover ->
+		$viewer.stop().fadeIn()
+	, ->
+		$viewer.stop().fadeOut()
+
 $(window).load ->
+	$('.post-content a').each ->
+		$(this).attr('target', '_blank')	
+
 	$('footer .caption').each ->
 		iconWidth			= $(this).parent().outerWidth()
 		captionWidth	= $(this).outerWidth()
@@ -16,3 +40,9 @@ $(window).load ->
 
 	$('.to-top').click ->
 		$('html, body').animate scrollTop : 0
+
+	$('.gif').each ->
+		gifViewer( $(this), $(this).attr('data-href') )
+
+
+

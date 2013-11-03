@@ -279,6 +279,7 @@ article {
   clear: both;
   font-size: 1.875rem;
   font-weight: 600;
+  line-height: 130%;
   padding-bottom: 1.25rem;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -321,10 +322,25 @@ article {
   -o-border-radius: 5px;
   border-radius: 5px; }
 
-.post-content p {
+.post-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600; }
+.post-content p, .post-content ul {
   margin: 1.25rem 0;
   font-size: 1.0625rem;
   line-height: 150%; }
+.post-content ul li {
+  list-style: disc;
+  margin: 0 0 1.25rem 1.25rem; }
+.post-content strong {
+  font-weight: 600; }
+.post-content a {
+  color: #de9a1d; }
+.post-content .gif {
+  color: #b17b17;
+  cursor: pointer; }
+.post-content a:hover {
+  text-decoration: underline; }
 
 .icon {
   position: relative;
@@ -452,7 +468,10 @@ footer {
   .post-template .post-title {
     font-size: 2.8125rem;
     line-height: 110%; }
-  .post-template .post-content p {
+  .post-template .post-content h3 {
+    font-size: 1.5625rem;
+    padding-top: 1.5625rem; }
+  .post-template .post-content p, .post-template .post-content ul {
     font-size: 1.25rem;
     line-height: 170%; }
 
@@ -480,19 +499,18 @@ footer {
     -webkit-box-shadow: 0px 0px 5px #333333;
     -moz-box-shadow: 0px 0px 5px #333333;
     box-shadow: 0px 0px 5px #333333; }
-
-  .caption:before {
-    content: "\5e";
-    position: absolute;
-    top: auto;
-    bottom: -0.5rem;
-    left: 50%;
-    color: #de9a1d;
-    font-family: andimal;
-    font-size: 0.625rem;
-    margin-left: -0.3125rem;
-    text-shadow: 0 0 0.625rem black;
-    clip: rect(-1.25rem 1.25rem 0.5rem -0.625rem); }
+    .caption:before {
+      content: "\5e";
+      position: absolute;
+      top: auto;
+      bottom: -0.5rem;
+      left: 50%;
+      color: #de9a1d;
+      font-family: andimal;
+      font-size: 0.625rem;
+      margin-left: -0.3125rem;
+      text-shadow: 0 0 0.625rem black;
+      clip: rect(-1.25rem 1.25rem 0.5rem -0.625rem); }
 
   .icon:hover .caption {
     visibility: visible;
@@ -503,6 +521,38 @@ footer {
     -ms-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s; }
+
+  .gif-viewer {
+    display: none;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0.3125rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 5px #333333;
+    -moz-box-shadow: 0px 0px 5px #333333;
+    box-shadow: 0px 0px 5px #333333; }
+    .gif-viewer:before {
+      content: "\5e";
+      position: absolute;
+      top: auto;
+      bottom: -0.5rem;
+      left: 50%;
+      color: rgba(0, 0, 0, 0.5);
+      font-family: andimal;
+      font-size: 0.625rem;
+      margin-left: -0.3125rem;
+      text-shadow: 0 0 0.625rem black;
+      clip: rect(-1.25rem 1.25rem 0.5rem -0.625rem);
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg); }
 
   footer .first, footer .last {
     padding-right: 1.75%;

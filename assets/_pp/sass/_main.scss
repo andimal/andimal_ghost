@@ -133,6 +133,7 @@ article {
 	clear: both;
 	font-size: rem(30);
 	font-weight: 600;
+	line-height: 130%;
 	padding-bottom: rem(20);
 	@include transition;
 }
@@ -183,10 +184,40 @@ article {
 	@include border-radius;
 }
 
-.post-content p {
-	margin: rem(20) 0;
-	font-size: rem(17);
-	line-height: 150%;
+.post-content {
+
+	h3 {
+		font-size: rem(20);
+		font-weight: 600;
+	}
+
+	p, ul {
+		margin: rem(20) 0;
+		font-size: rem(17);
+		line-height: 150%;
+	}
+
+	ul li {
+		list-style: disc;
+		margin: 0 0 rem(20) rem(20);
+	}
+
+	strong {
+		font-weight: 600;
+	}
+
+	a {
+		color: $orange;
+	}
+
+	.gif {
+		color: darken($orange, 10%);
+		cursor: pointer;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
 }
 
 .icon {
@@ -345,9 +376,17 @@ footer {
 			line-height: 110%;
 		}
 
-		.post-content p {
-			font-size: rem(20);
-			line-height: 170%;
+		.post-content {
+		
+			h3 {
+				font-size: rem(25);
+				padding-top: rem(25);
+			}
+
+			p, ul {
+				font-size: rem(20);
+				line-height: 170%;
+			}
 		}
 	}
 
@@ -372,20 +411,10 @@ footer {
 		@include border-radius;
 		@include box-shadow;
 		// @include transition;
-	}
 
-	.caption:before {
-		content: "\5e";
-		position: absolute;
-		top: auto;
-		bottom: rem(-8);
-		left: 50%;
-		color: $orange;
-		font-family: andimal;
-		font-size: rem(10);
-		margin-left: rem(-5);
-		text-shadow: 0 0 rem(10) #000;
-		clip: rect( rem(-20) rem(20) rem(8) rem(-10) );
+		&:before {
+			@include caption-pointer($orange);
+		}
 	}
 
 	.icon:hover .caption {
@@ -394,6 +423,21 @@ footer {
 		// opacity: 1;
 		cursor: pointer;
 		@include transition;
+	}
+
+	.gif-viewer {
+		display: none;
+		position: absolute;
+		top: 0;
+		background-color: rgba(0,0,0,0.8);
+		padding: rem(5);
+		@include border-radius;
+		@include box-shadow;
+
+		&:before {
+			@include caption-pointer( rgba(0,0,0,0.5) );
+			@include rotate(180deg);
+		}
 	}
 
 	footer {
