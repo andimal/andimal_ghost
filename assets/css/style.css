@@ -323,7 +323,7 @@ article {
   border-radius: 5px; }
 
 .post-content h3 {
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   font-weight: 600; }
 .post-content p, .post-content ul {
   margin: 1.25rem 0;
@@ -469,7 +469,7 @@ footer {
     font-size: 2.8125rem;
     line-height: 110%; }
   .post-template .post-content h3 {
-    font-size: 1.5625rem;
+    font-size: 1.6875rem;
     padding-top: 1.5625rem; }
   .post-template .post-content p, .post-template .post-content ul {
     font-size: 1.25rem;

@@ -21,7 +21,10 @@ gifViewer = ($span, href) ->
 
 $(window).load ->
 	$('.post-content a').each ->
-		$(this).attr('target', '_blank')	
+		$(this).attr('target', '_blank')
+
+	$('.gif').each ->
+		gifViewer( $(this), $(this).attr('data-href') )
 
 	$('footer .caption').each ->
 		iconWidth			= $(this).parent().outerWidth()
@@ -40,9 +43,6 @@ $(window).load ->
 
 	$('.to-top').click ->
 		$('html, body').animate scrollTop : 0
-
-	$('.gif').each ->
-		gifViewer( $(this), $(this).attr('data-href') )
 
 
 
