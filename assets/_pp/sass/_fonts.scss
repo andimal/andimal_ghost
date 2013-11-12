@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icons';
-    src:url('../fonts/icons.eot');
-    src:url('../fonts/icons.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/icons.woff') format('woff'),
-        url('../fonts/icons.ttf') format('truetype'),
-        url('../fonts/icons.svg#icons') format('svg');
+    src:url('http://static.andimal.co/fonts/icons.eot');
+    src:url('http://static.andimal.co/fonts/icons.eot?#iefix') format('embedded-opentype'),
+        url('http://static.andimal.co/fonts/icons.woff') format('woff'),
+        url('http://static.andimal.co/fonts/icons.ttf') format('truetype'),
+        url('http://static.andimal.co/fonts/icons.svg#icons') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -30,11 +30,11 @@
 
 @font-face {
 	font-family: 'andimal';
-	src:url('../fonts/andimal.eot');
-	src:url('../fonts/andimal.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/andimal.woff') format('woff'),
-		url('../fonts/andimal.ttf') format('truetype'),
-		url('../fonts/andimal.svg#andimal') format('svg');
+	src:url('http://static.andimal.co/fonts/andimal.eot');
+	src:url('http://static.andimal.co/fonts/andimal.eot?#iefix') format('embedded-opentype'),
+		url('http://static.andimal.co/fonts/andimal.woff') format('woff'),
+		url('http://static.andimal.co/fonts/andimal.ttf') format('truetype'),
+		url('http://static.andimal.co/fonts/andimal.svg#andimal') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
