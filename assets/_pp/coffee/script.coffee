@@ -1,3 +1,5 @@
+hljs.initHighlightingOnLoad()
+
 gifViewer = ($span, href) ->
 	$viewer = 	$('<div class="gif-viewer">' +
 								'<img src="' + href + '" />' +
