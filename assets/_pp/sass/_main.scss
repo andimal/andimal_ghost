@@ -42,13 +42,8 @@ body {
 	.header-icons {
 		position: absolute;
 		top: 0;
-		right: rem(-36);
+		right: 0;
 		height: 100%;
-		@include transition;
-	}
-
-	.show-to-top {
-		right: rem(5);
 		@include transition;
 	}
 
@@ -61,6 +56,7 @@ body {
 	}
 
 	.to-top {
+		display: none;
 		cursor: pointer;
 
 		.icon-triangle {
@@ -185,6 +181,40 @@ article {
 }
 
 .post-content {
+	max-width: 600px;
+
+	img,
+	iframe {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.image-container {
+		position: relative;
+		overflow: hidden;
+
+		&:after {
+			content: attr(data-caption);
+			position: absolute;
+			bottom: -100%;
+			left: 0;
+			width: 90%;
+			opacity: 1;
+			background-color: rgba($orange, 0.9);
+			padding: 5%;
+			font-size: 1.1em;
+			text-shadow: 1px 1px 0 rgba(255,255,255,0.3);
+			@include transition;
+		}
+
+		&:hover:after {
+			bottom: 0;
+		}
+	}
+
+	iframe {
+		height: 710px;
+	}
 
 	h3 {
 		font-size: rem(22);
@@ -301,11 +331,25 @@ footer {
 	}
 }
 
+.gif-viewer {
+	display: none;
+}
+
 @include respond-to() {
 
 	.site-header {
 		position: fixed;
+		z-index: 1;
 		border-bottom: rem(2) solid $background;
+
+		.header-icons {
+			right: rem(-36);
+		}
+
+		.show-to-top {
+			right: rem(5);
+			@include transition;
+		}
 
 		.caption {
 			top: rem(55);
@@ -324,6 +368,10 @@ footer {
 
 		.rss .caption {
 			margin-left: rem(-10);
+		}
+
+		.to-top {
+			display: inline-block;
 		}
 	}
 

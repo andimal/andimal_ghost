@@ -310,15 +310,8 @@ body {
   .site-header .header-icons {
     position: absolute;
     top: 0;
-    right: -2.25rem;
+    right: 0;
     height: 100%;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -ms-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s; }
-  .site-header .show-to-top {
-    right: 0.3125rem;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -ms-transition: all 0.2s;
@@ -335,6 +328,7 @@ body {
     -o-transition: all 0.2s;
     transition: all 0.2s; }
   .site-header .to-top {
+    display: none;
     cursor: pointer; }
     .site-header .to-top .icon-triangle {
       font-size: .75em; }
@@ -449,25 +443,54 @@ article {
   -o-border-radius: 5px;
   border-radius: 5px; }
 
-.post-content h3 {
-  font-size: 1.375rem;
-  font-weight: 600; }
-.post-content p, .post-content ul {
-  margin: 1.25rem 0;
-  font-size: 1.0625rem;
-  line-height: 150%; }
-.post-content ul li {
-  list-style: disc;
-  margin: 0 0 1.25rem 1.25rem; }
-.post-content strong {
-  font-weight: 600; }
-.post-content a {
-  color: #de9a1d; }
-.post-content .gif {
-  color: #b17b17;
-  cursor: pointer; }
-.post-content a:hover {
-  text-decoration: underline; }
+.post-content {
+  max-width: 600px; }
+  .post-content img,
+  .post-content iframe {
+    max-width: 100%;
+    width: 100%; }
+  .post-content .image-container {
+    position: relative;
+    overflow: hidden; }
+    .post-content .image-container:after {
+      content: attr(data-caption);
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: 90%;
+      opacity: 1;
+      background-color: rgba(222, 154, 29, 0.9);
+      padding: 5%;
+      font-size: 1.1em;
+      text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -ms-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
+    .post-content .image-container:hover:after {
+      bottom: 0; }
+  .post-content iframe {
+    height: 710px; }
+  .post-content h3 {
+    font-size: 1.375rem;
+    font-weight: 600; }
+  .post-content p, .post-content ul {
+    margin: 1.25rem 0;
+    font-size: 1.0625rem;
+    line-height: 150%; }
+  .post-content ul li {
+    list-style: disc;
+    margin: 0 0 1.25rem 1.25rem; }
+  .post-content strong {
+    font-weight: 600; }
+  .post-content a {
+    color: #de9a1d; }
+  .post-content .gif {
+    color: #b17b17;
+    cursor: pointer; }
+  .post-content a:hover {
+    text-decoration: underline; }
 
 .icon {
   position: relative;
@@ -526,10 +549,23 @@ footer {
     footer .poweredby:hover {
       color: #CCC; }
 
+.gif-viewer {
+  display: none; }
+
 @media only screen and (min-width: 768px) {
   .site-header {
     position: fixed;
+    z-index: 1;
     border-bottom: 0.125rem solid #fafaf7; }
+    .site-header .header-icons {
+      right: -2.25rem; }
+    .site-header .show-to-top {
+      right: 0.3125rem;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -ms-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
     .site-header .caption {
       top: 3.4375rem;
       left: -0.25rem; }
@@ -541,6 +577,8 @@ footer {
       top: 2.8125rem; }
     .site-header .rss .caption {
       margin-left: -0.625rem; }
+    .site-header .to-top {
+      display: inline-block; }
 
   main {
     *zoom: 1;
