@@ -212,10 +212,6 @@ article {
 		}
 	}
 
-	iframe {
-		height: 710px;
-	}
-
 	h3 {
 		font-size: rem(22);
 		font-weight: 600;
@@ -229,7 +225,7 @@ article {
 
 	ul li {
 		list-style: disc;
-		margin: 0 0 rem(20) rem(20);
+		margin: 0 0 0 rem(50);
 	}
 
 	strong {
