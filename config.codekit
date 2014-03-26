@@ -26,6 +26,16 @@
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
+	"\/assets\/_pp\/coffee\/script.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/_pp\/coffee\/script.js",
+		"outputAbbreviatedPath": "\/assets\/js\/script.js",
+		"outputPathIsSetByUser": 1,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/assets\/_pp\/sass\/_fonts.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -160,13 +170,23 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/js\/script.js": {
+	"\/assets\/js\/min\/script-ck.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/script.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/script-ck.js",
+		"inputAbbreviatedPath": "\/assets\/js\/min\/script-ck.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/script-ck-ck.js",
 		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/assets\/js\/script.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/assets\/js\/script.js",
+		"outputAbbreviatedPath": "\/assets\/js\/script.js",
+		"outputPathIsSetByUser": 1,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
@@ -204,6 +224,20 @@
 	],
 "lastSavedByUser": "Andy Richardson",
 "manualImportLinks": {
+	"\/assets\/_pp\/coffee\/script.js": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/assets\/js\/highlight.pack.js",
+			"position": 0,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/assets\/js\/site.js",
+			"position": 1,
+			"type": 0
+			}
+		],
 	"\/assets\/js\/script.js": [
 		{
 			"followForSyntaxChecking": 1,
