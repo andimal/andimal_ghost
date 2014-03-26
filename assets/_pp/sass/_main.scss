@@ -12,6 +12,10 @@ body {
 	background-color: lighten($orange, 10%);
 }
 
+pre {
+	line-height: 1.7;
+}
+
 .site-header, footer {
 	background: $header;
 	width: 100%;

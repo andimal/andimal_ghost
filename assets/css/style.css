@@ -275,6 +275,9 @@ body {
 ::-moz-selection {
   background-color: #e7af47; }
 
+pre {
+  line-height: 1.7; }
+
 .site-header, footer {
   background: #454545;
   width: 100%; }
