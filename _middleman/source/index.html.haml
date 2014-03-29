@@ -1,9 +1,47 @@
----
-title: Middleman is Watching
-body_class: index
----
+!!!
+%html
+  %head
+    %meta{charset: "UTF-8", content: "text/html", "http-equiv" => "Content-Type"}
+    %meta{content: "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    
+    %title
+      - if build?
+        {{meta_title}}
+      - else
+        = data.page.title
 
-.welcome
-  %h1 Middleman is Watching
-  %p.doc
-    = link_to 'Read Online Documentation', 'http://middlemanapp.com/', title: 'Read Online Documentation', target: '_blank'
+    %meta{content: "{{meta_description}}", name: "description"}
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
+    
+    = stylesheet_link_tag 'application'
+
+    %script{src: "//use.typekit.net/mkt1goj.js", type: "text/javascript"}
+    :javascript
+      try{Typekit.load();}catch(e){}
+    
+    - if build?
+      {{ghost_head}}
+
+  %body
+    = partial "layouts/header"
+    
+    - if build?
+      {{{body}}}
+    -else
+      = partial "home"
+
+    = partial "layouts/footer"
+
+    
+    - if build?
+      {{ghost_foot}}
+    
+    = javascript_include_tag 'application'
+    
+    - if build?
+      -# Google Analytics
+      :javascript
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
