@@ -1,0 +1,6 @@
+= link_to post_slug(post), class: "post-link" do
+  %article
+    %h2.post-title= post_title(post)
+    %span.post-meta
+/     %time{datetime: Time.at( post_published_at(post) / 1000 ).strftime("%Y-%m-%d")}
+/       = Time.at( post_published_at(post) / 1000 ).strftime("%B %d")

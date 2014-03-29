@@ -1,47 +1,39 @@
-!!!
-%html
-  %head
-    %meta{charset: "UTF-8", content: "text/html", "http-equiv" => "Content-Type"}
-    %meta{content: "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
-    
-    %title
-      - if build?
-        {{meta_title}}
-      - else
-        = data.page.title
+- def post_title (post)
+  - if build?
+    - post_title = "{{{title}}}"
+  - else  
+    - post['title']
 
-    %meta{content: "{{meta_description}}", name: "description"}
-    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
-    
-    = stylesheet_link_tag 'application'
+- def post_slug (post)
+  - if build?
+    - post_slug = "{{{url}}}"
+  - else  
+    - post['slug']
 
-    %script{src: "//use.typekit.net/mkt1goj.js", type: "text/javascript"}
-    :javascript
-      try{Typekit.load();}catch(e){}
-    
-    - if build?
-      {{ghost_head}}
+- def post_published_at (post)
+  - if build?
+    - post_published_at = "{{{title}}}"
+  - else  
+    - post['published_at']
 
-  %body
-    = partial "layouts/header"
-    
-    - if build?
-      {{{body}}}
-    -else
-      = partial "home"
+- if build?
+  {{!< default}}
 
-    = partial "layouts/footer"
+%main.content{role: "main"}
 
-    
-    - if build?
-      {{ghost_foot}}
-    
-    = javascript_include_tag 'application'
-    
-    - if build?
-      -# Google Analytics
-      :javascript
-        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
+  - if build?
+    - post = nil
+    {{#foreach posts}}
+    = partial "single_post", locals: {post: post}
+    {{/foreach}}
+            
+  - else
+    - @posts.take(6).each do |post|
+      = partial "single_post", locals: {post: post}
+      
+            
+/ %span.tags
+/   {{#foreach tags}}
+/   %p.tag {{name}}
+/   {{/foreach}}
+/ %p.post-excerpt {{excerpt words="40"}}... &#8594;

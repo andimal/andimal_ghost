@@ -59,6 +59,13 @@ set :fonts_dir, 'assets/fonts'
 
 activate :livereload
 
+configure :development do
+  proxy "index.html", "/default.html"
+
+  require "map_data"
+  @posts = map_data
+end
+
 # Build-specific configuration
 configure :build do
   ignore 'images/*.psd'
@@ -88,8 +95,8 @@ configure :build do
   # set :http_path, "/Content/images/"
 
   after_build do |builder|
-    FileUtils.mv("#{build_dir}/index.html", "#{build_dir}/default.hbs")
-    FileUtils.mv("#{build_dir}/home.html", "#{build_dir}/index.hbs")
+    FileUtils.mv("#{build_dir}/default.html", "#{build_dir}/default.hbs")
+    FileUtils.mv("#{build_dir}/index.html", "#{build_dir}/index.hbs")
     FileUtils.mv("#{build_dir}/post.html", "#{build_dir}/post.hbs")
   end
 end
