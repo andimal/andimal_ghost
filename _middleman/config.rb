@@ -65,7 +65,8 @@ configure :development do
   proxy "index.html", "/default.html"
 
   require "map_data"
-  @posts = map_data
+  @posts    = map_data
+  @settings = map_settings
 
   require "return_data"
 

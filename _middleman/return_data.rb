@@ -1,8 +1,24 @@
 # Functions to return post data if running mm server or
 # handlebars stuff for building the Ghost template
+def blog_title
+  if build?
+    "{{@blog.title}}"
+  else  
+    @settings['title']
+  end
+end
+
+def blog_description
+  if build?
+    "{{@blog.description}}"
+  else  
+    @settings['description']
+  end
+end
+
 def post_title (post)
   if build?
-    "{{{title}}}"
+    "{{title}}"
   else  
     post['title']
   end
@@ -10,7 +26,7 @@ end
 
 def post_slug (post)
   if build?
-    "{{{url}}}"
+    "{{url}}"
   else  
     "#{post['slug']}.html"
   end

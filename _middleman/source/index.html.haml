@@ -12,10 +12,3 @@
   - else
     - @posts.take(6).each do |post|
       = partial "home_post", locals: {post: post}
-      
-            
-/ %span.tags
-/   {{#foreach tags}}
-/   %p.tag {{name}}
-/   {{/foreach}}
-/ %p.post-excerpt {{excerpt words="40"}}... &#8594;

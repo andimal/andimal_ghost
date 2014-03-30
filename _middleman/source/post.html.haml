@@ -11,10 +11,18 @@
     %span.post-meta
       %time{datetime: post_published_at(post)}
         = display_post_published_at(post)
-    / %span.tags
-    /   {{#foreach tags}}
-    /   %p.tag {{name}}
-    /   {{/foreach}}
+      
+      %br
+      = "tags: "
+      - if build?
+        {{#foreach tags}}
+        {{name}}
+        {{/foreach}}
+
+      -else
+        - post['tags'].each do |tag|
+          = tag.first
+
     %h1.post-title= post_title(post)
     %section.post-content= post_content(post)
     
