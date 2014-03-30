@@ -1,7 +1,13 @@
-def map_data
-	require "sqlite3"
+require "sqlite3"
+
+def get_tags (post_id)
 	db = SQLite3::Database.new "../../../data/ghost-dev.db"
+	db.execute( "SELECT name FROM tags WHERE id IN (SELECT tag_id FROM posts_tags WHERE post_id = #{post_id})" )
+end
+
+def map_data
 	posts = []
+	db = SQLite3::Database.new "../../../data/ghost-dev.db"
 	db.execute( "select * from posts where status = 'published' " ) do |row|
 	  new_row = {}
 	  new_row['id']               = row[0]
@@ -24,6 +30,7 @@ def map_data
 	  new_row['updated_by']       = row[17]
 	  new_row['published_at']     = row[18]
 	  new_row['published_by']     = row[19]
+	  new_row['tags']							= get_tags( row[0] )
 	  posts << new_row
 	end
 
