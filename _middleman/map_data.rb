@@ -9,7 +9,7 @@ def map_data
 	  new_row['title']            = row[2]
 	  new_row['slug']             = row[3]
 	  new_row['markdown']         = row[4]
-	  new_row['hmtl']             = row[5]
+	  new_row['html']             = row[5]
 	  new_row['image']            = row[6]
 	  new_row['featured']         = row[7]
 	  new_row['page']             = row[8]

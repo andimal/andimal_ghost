@@ -28,7 +28,10 @@
     - if build?
       {{{body}}}
     -else
-      = partial "index"
+      - if defined? post
+        = partial "post", locals: {post: post}
+      -else
+        = partial "index"
 
     = partial "layouts/footer"
 

@@ -1,0 +1,6 @@
+= link_to post_slug(post), class: "post-link" do
+  %article
+    %h2.post-title= post_title(post)
+    %span.post-meta
+    %time{datetime: post_published_at(post)}
+      = display_post_published_at(post)

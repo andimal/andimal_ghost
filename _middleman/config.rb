@@ -59,11 +59,22 @@ set :fonts_dir, 'assets/fonts'
 
 activate :livereload
 
+require "return_data"
+
 configure :development do
   proxy "index.html", "/default.html"
 
   require "map_data"
   @posts = map_data
+
+  require "return_data"
+
+  # Build urls for posts when mm server is running
+  # The .html is added because otherwise mm renders 
+  # the template as plain text
+  @posts.each do |post|
+    proxy "#{post['slug']}.html", "/default.html", locals: { post: post }
+  end
 end
 
 # Build-specific configuration

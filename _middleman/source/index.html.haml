@@ -1,21 +1,3 @@
-- def post_title (post)
-  - if build?
-    - post_title = "{{{title}}}"
-  - else  
-    - post['title']
-
-- def post_slug (post)
-  - if build?
-    - post_slug = "{{{url}}}"
-  - else  
-    - post['slug']
-
-- def post_published_at (post)
-  - if build?
-    - post_published_at = "{{{title}}}"
-  - else  
-    - post['published_at']
-
 - if build?
   {{!< default}}
 
@@ -24,12 +6,12 @@
   - if build?
     - post = nil
     {{#foreach posts}}
-    = partial "single_post", locals: {post: post}
+    = partial "home_post", locals: {post: post}
     {{/foreach}}
             
   - else
     - @posts.take(6).each do |post|
-      = partial "single_post", locals: {post: post}
+      = partial "home_post", locals: {post: post}
       
             
 / %span.tags

@@ -3,14 +3,20 @@
 
 %main.content{role: "main"}
   %article{class: "{{post_class}}"}
-    {{#post}}
+    
+    - if build?
+      - post = nil
+      {{#post}}
+    
     %span.post-meta
-      %time{datetime: "{{date format='YYYY-MM-DD'}}"} {{date format="MMMM DD"}}
-    %span.tags
-      {{#foreach tags}}
-      %p.tag {{name}}
-      {{/foreach}}
-    %h1.post-title {{{title}}}
-    %section.post-content
-      {{content}}
-    {{/post}}
+      %time{datetime: post_published_at(post)}
+        = display_post_published_at(post)
+    / %span.tags
+    /   {{#foreach tags}}
+    /   %p.tag {{name}}
+    /   {{/foreach}}
+    %h1.post-title= post_title(post)
+    %section.post-content= post_content(post)
+    
+    - if build?
+      {{/post}}
