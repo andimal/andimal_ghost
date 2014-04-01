@@ -1,2 +1,6 @@
-%h1= blog_title
-%h4= blog_description
+%header{style: "background-image: url(#{blog_cover})", data: {stellar_background_ratio: "0.5"}}
+  .header-inner
+    %i.icon-andimal
+    %h1= blog_title
+
+    %button.btn.btn-white-outline.capitalize.margin-top-30 About

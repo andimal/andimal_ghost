@@ -16,6 +16,14 @@ def blog_description
   end
 end
 
+def blog_cover
+  if build?
+    "{{@blog.cover}}"
+  else  
+    "/assets/images/header_placeholder.jpg"
+  end
+end
+
 def post_title (post)
   if build?
     "{{title}}"

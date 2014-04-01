@@ -17,7 +17,7 @@ end
 
 def map_data
   posts = []
-  $db.execute( "select * from posts where status = 'published' " ) do |row|
+  $db.execute( "select * from posts where status = 'published' order by id desc " ) do |row|
     new_row = {}
     new_row['id']               = row[0]
     new_row['uuid']             = row[1]
