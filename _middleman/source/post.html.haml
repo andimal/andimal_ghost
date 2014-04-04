@@ -1,30 +1,29 @@
 - if build?
   {{! default}}
 
-%main.content{role: "main"}
-  %article{class: "{{post_class}}"}
+%main.content.container-fluid{role: "main"}
+  %article.col-sm-10.col-sm-centered{class: "{{post_class}}"}
     
     - if build?
       - post = nil
       {{#post}}
     
-    %span.post-meta
-      %time{datetime: post_published_at(post)}
-        = display_post_published_at(post)
-      
-      %br
-      = "tags: "
+    %time{datetime: post_published_at(post)}
+      %span= display_post_published_at(post)
+
+    %h1.post-title= post_title(post)
+
+    .row
       - if build?
         {{#foreach tags}}
-        {{name}}
+        %span.tag {{name}}
         {{/foreach}}
 
       -else
         - post['tags'].each do |tag|
-          = tag.first
+          %span.tag= tag.first
 
-    %h1.post-title= post_title(post)
-    %section.post-content= post_content(post)
+    %section.post-content.margin-top-20= post_content(post)
     
     - if build?
       {{/post}}

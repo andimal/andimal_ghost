@@ -1,0 +1,5 @@
+$ ->
+  $.stellar()
+
+  $(window).load ->
+    prettyPrint()

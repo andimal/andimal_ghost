@@ -1,0 +1,74 @@
+// Utilities
+.width-full,
+img
+  width: 100%
+
+img
+  max-width: 600px
+  max-height: none
+
+.relative
+  position: relative
+
+.hidden
+  display: none
+
+.block
+  display: block
+
+.capitalize
+  text-transform: uppercase
+
+.rounded
+  border-radius: $border-radius-base
+
+.padding
+  padding: $gutter
+
+.time-sub
+  font-size: 0.75em
+
+.text-small
+  font-size: 0.9em
+
+.margin-top-20
+  margin-top: 20px
+
+.margin-top-30
+  margin-top: 30px
+
+article
+  padding: 30px 5% 40px !important
+
+  p,
+  i
+    font-family: $font-family-body
+    font-weight: 400
+
+  h1,
+  h2
+    margin: 15px 0 5px
+
+time
+  font-family: $font-family-body
+  font-weight: 300
+  font-style: italic
+  color: #999
+  background-color: white
+
+  &:before
+    content: ""
+    position: absolute
+    top: 48px
+    left: 2%
+    width: 96%
+    height: 1px
+    background-color: #DDD
+
+  span
+    position: relative
+    z-index: 2
+    margin-left: -10px
+    padding: 0 10px
+    background-color: white
+    font-size: 14px
