@@ -2,4 +2,4 @@ $ ->
   $.stellar()
 
   $(window).load ->
-    prettyPrint()
+    # prettyPrint()

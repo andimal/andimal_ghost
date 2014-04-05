@@ -1,78 +1,68 @@
-/* Tomorrow Night Eighties Theme */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-
-.prettyprinted
+pre
   background: #2d2d2d
-  font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace
-  font-size: 18px
-  // line-height: 1.5
-  border: 1px solid #ccc
-  padding: 40px
   border-radius: 4px
+  overflow-wrap: normal
+  overflow: scroll
+  white-space: pre
 
-.pln
-  color: #cccccc
+.hljs
+  position: relative
+  left: -70px
+  padding: 0
+  background: none
+  font-size: 18px
+  color: #ccc
 
-@media screen
-  .str
-    color: #99cc99
-  .kwd
-    color: #cc99cc
-  .com
-    color: #999999
-  .typ
-    color: #6699cc
-  .lit
-    color: #f99157
-  .pun, .opn, .clo
-    color: #cccccc
-  .tag
+
+.hljs-comment, .hljs-title
+  color: #999
+
+.hljs-variable, .hljs-attribute, .hljs-tag, .hljs-regexp, .ruby .hljs-constant
+  color: #f2777a
+
+.xml
+  .hljs-tag .hljs-title, .hljs-pi, .hljs-doctype
     color: #f2777a
-  .atn
-    color: #f99157
-  .atv
-    color: #66cccc
-  .dec
-    color: #f99157
-  .var
+
+.html .hljs-doctype
+  color: #f2777a
+
+.css
+  .hljs-id, .hljs-class, .hljs-pseudo
     color: #f2777a
-  .fun
-    color: #6699cc
 
-@media print, projection
-  .str
-    color: #006600
-  .kwd
-    color: #006
-    font-weight: bold
-  .com
-    color: #600
-    font-style: italic
-  .typ
-    color: #404
-    font-weight: bold
-  .lit
-    color: #004444
-  .pun, .opn, .clo
-    color: #444400
-  .tag
-    color: #006
-    font-weight: bold
-  .atn
-    color: #440044
-  .atv
-    color: #006600
+.hljs-number, .hljs-preprocessor, .hljs-pragma, .hljs-built_in, .hljs-literal, .hljs-params, .hljs-constant
+  color: #f99157
 
-/* Specify class=linenums on a pre to get line numbering */
+.ruby .hljs-class .hljs-title, .css .hljs-rules .hljs-attribute
+  color: #fc6
 
-ol.linenums
-  margin-top: 0
-  margin-bottom: 0
+.hljs-string, .hljs-value, .hljs-inheritance, .hljs-header, .ruby .hljs-symbol, .xml .hljs-cdata
+  color: #9c9
 
-/* IE indents via margin-left*/
+.css .hljs-hexcolor
+  color: #6cc
 
-/*li
-  &.L0, &.L1, &.L2, &.L3, &.L4, &.L5, &.L6, &.L7, &.L8, &.L9, &.L1, &.L3, &.L5, &.L7, &.L9
-    /*
+.hljs-function
+  color: #69c
 
-/* Alternate shading for lines
+.python
+  .hljs-decorator, .hljs-title
+    color: #69c
+
+.ruby
+  .hljs-function .hljs-title, .hljs-title .hljs-keyword
+    color: #69c
+
+.perl .hljs-sub, .javascript .hljs-title, .coffeescript .hljs-title
+  color: #69c
+
+.hljs-keyword, .javascript .hljs-function
+  color: #c9c
+
+.coffeescript .javascript, .javascript .xml, .tex .hljs-formula
+  opacity: .5
+
+.xml
+  .javascript, .vbscript, .css, .hljs-cdata
+    opacity: .5

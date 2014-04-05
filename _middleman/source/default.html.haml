@@ -12,12 +12,15 @@
 
     %meta{content: "{{meta_description}}", name: "description"}
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
-    
-    = stylesheet_link_tag 'application'
+
+    = javascript_include_tag 'http://yandex.st/highlightjs/8.0/highlight.min.js'
 
     %script{src: "//use.typekit.net/qei1uqx.js", type: "text/javascript"}
     :javascript
       try{Typekit.load();}catch(e){}
+      hljs.initHighlightingOnLoad()
+
+    = stylesheet_link_tag 'application'
     
     - if build?
       {{ghost_head}}
