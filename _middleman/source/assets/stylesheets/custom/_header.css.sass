@@ -38,3 +38,65 @@ header
     font-weight: 600
     font-size: 50px
     letter-spacing: 1px
+
+.post-header
+  .post-nav
+    a
+      &:nth-child(1)
+        text-align: left
+
+        &:before
+          content: "<"
+          padding: 0 20px
+
+      &:nth-child(3)
+        text-align: right
+
+        &:after
+          content: ">"
+          padding: 0 20px
+
+  .post-nav-links
+    height: 77px
+    line-height: 77px
+    background: rgba(white, 0.2)
+    opacity: 0.2
+    +transition(all 0.2s ease-in-out)
+
+    &:hover
+      opacity: 1
+
+  a
+    color: white
+
+    &:hover 
+      text-decoration: none
+
+      i
+        +transform( scale(1.2) )
+
+    i
+      display: block
+      font-size: 50px
+      +transition(all 0.2s ease-in-out)
+
+  time,
+  time span
+    background: none
+    color: #DDD
+    font-size: 16px
+
+  time
+    &:before
+      top: 29px
+      left: 0
+      width: 40%
+
+    &:after
+      content: ""
+      position: absolute
+      top: 29px
+      right: 0
+      width: 40%
+      height: 1px
+      background-color: #DDD
