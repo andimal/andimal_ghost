@@ -133,7 +133,7 @@ DEPENDENCIES
   font-awesome-middleman
   jquery-middleman
   manhattan!
-  middleman (~> 3.1.4)
+  middleman (~> 3.1.6)
   middleman-livereload (~> 3.1.0)
   nokogiri
   primordial!
