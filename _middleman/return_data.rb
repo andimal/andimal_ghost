@@ -1,5 +1,13 @@
 # Functions to return post data if running mm server or
 # handlebars stuff for building the Ghost template
+def root_url
+  if build?
+    "{{@blog.url}}"
+  else  
+    "/"
+  end
+end
+
 def blog_title
   if build?
     "{{@blog.title}}"

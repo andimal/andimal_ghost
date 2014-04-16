@@ -26,7 +26,7 @@
       {{ghost_head}}
 
   %body
-    / = partial "layouts/header"
+    -# = partial "layouts/header"
     
     - if build?
       {{{body}}}
@@ -43,7 +43,7 @@
       {{ghost_foot}}
     
     = javascript_include_tag 'application'
-    / = javascript_include_tag 'https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js'
+    -# = javascript_include_tag 'https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js'
     
     - if build?
       -# Google Analytics

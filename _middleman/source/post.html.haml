@@ -1,9 +1,11 @@
 - if build?
   {{!< default}}
+  - post = nil
+  {{#post}}
 
 %header.post-header{style: "background-image: url(#{blog_cover})", data: {stellar_background_ratio: "0.5"}}
   .header-inner.container-fluid
-    = link_to "#" do
+    = link_to root_url do
       %i.icon-andimal
 
     .col-sm-10.col-sm-centered
@@ -13,15 +15,6 @@
 
 %main.content.container-fluid{role: "main"}
   %article.col-sm-10.col-lg-8.col-sm-centered{class: "{{post_class}}"}
-    
-    - if build?
-      - post = nil
-      {{#post}}
-    
-    / %time{datetime: post_published_at(post)}
-    /   %span= display_post_published_at(post)
-
-    / %h1.post-title= post_title(post)
 
     .row
       - if build?
@@ -35,12 +28,12 @@
 
     %section.post-content.margin-top-20= post_content(post)
     
-    - if build?
-      {{/post}}
+- if build?
+  {{/post}}
 
-  .container-fluid
-    .post-nav.row.col-sm-10.col-sm-centered.no-padding
-      = link_to "#", class: "col-sm-6 post-nav-links no-padding" do
-        Prev Article
-      = link_to "#", class: "col-sm-6 post-nav-links no-padding pull-right" do
-        Next Article
+-#.container-fluid
+-#  .post-nav.row.col-sm-10.col-sm-centered.no-padding
+-#    = link_to "#", class: "col-sm-6 post-nav-links no-padding" do
+-#      Prev Article
+-#    = link_to "#", class: "col-sm-6 post-nav-links no-padding pull-right" do
+-#      Next Article
