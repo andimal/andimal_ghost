@@ -4,3 +4,39 @@ main.content
 .post-content
   img
     margin: 10px 0
+
+.post-nav
+  a
+    &:nth-child(1)
+      text-align: left
+
+      &:before
+        @extend .fa
+        content: "\f053"
+        padding: 0 20px
+
+    &:nth-child(2)
+      text-align: right
+
+      &:after
+        @extend .fa
+        content: "\f054"
+        padding: 0 20px
+
+    &:hover
+      text-decoration: none
+
+.post-nav-links
+  height: 77px
+  line-height: 77px
+  background: rgba($brand-primary, 0.2)
+  color: $text-color
+  opacity: 0.6
+  +transition(all 0.2s ease-in-out)
+
+  &:hover
+    opacity: 1
+    color: $text-color
+
+h5 a
+  color: $text-color

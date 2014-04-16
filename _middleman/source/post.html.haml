@@ -3,13 +3,8 @@
 
 %header.post-header{style: "background-image: url(#{blog_cover})", data: {stellar_background_ratio: "0.5"}}
   .header-inner.container-fluid
-    .post-nav.row.col-sm-10.col-sm-centered.no-padding
-      = link_to "#", class: "col-sm-5 post-nav-links no-padding" do
-        Prev Article
-      = link_to "#", class: "col-sm-2" do
-        %i.icon-andimal
-      = link_to "#", class: "col-sm-5 post-nav-links no-padding" do
-        Next Article
+    = link_to "#" do
+      %i.icon-andimal
 
     .col-sm-10.col-sm-centered
       %time{datetime: post_published_at(post)}
@@ -17,7 +12,7 @@
       %h1= post_title(post)
 
 %main.content.container-fluid{role: "main"}
-  %article.col-sm-10.col-sm-centered{class: "{{post_class}}"}
+  %article.col-sm-10.col-lg-8.col-sm-centered{class: "{{post_class}}"}
     
     - if build?
       - post = nil
@@ -42,3 +37,10 @@
     
     - if build?
       {{/post}}
+
+  .container-fluid
+    .post-nav.row.col-sm-10.col-sm-centered.no-padding
+      = link_to "#", class: "col-sm-6 post-nav-links no-padding" do
+        Prev Article
+      = link_to "#", class: "col-sm-6 post-nav-links no-padding pull-right" do
+        Next Article
