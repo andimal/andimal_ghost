@@ -8,3 +8,18 @@
 
   .about
     %i#back-to-header.fa.fa-hand-o-left
+    .container
+      .col-sm-10.col-sm-centered
+        .col-sm-6
+          %h1 Andy Richardson
+          %h2= blog_description
+
+        .col-sm-6
+          .contact-icon.col-xs-3.col-sm-6.text-right
+            = link_to "", "http://twitter.com/and1mal", class: "fa fa-twitter"
+          .contact-icon.col-xs-3.col-sm-6.text-left
+            = link_to "", "mailto:andy@andimal.co", class: "fa fa-envelope"
+          .contact-icon.col-xs-3.col-sm-6.text-right
+            = link_to "", "http://github.com/andimal", class: "fa fa-github"
+          .contact-icon.col-xs-3.col-sm-6.text-left
+            = link_to "", "http://andyontheinterwebs.com", class: "fa fa-tumblr"
