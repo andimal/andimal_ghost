@@ -1,0 +1,15 @@
+task :build do
+    sh 'middleman build --no-clean'
+  end
+
+  task :upload_dry_run do
+    sh 'rsync -nav --delete --exclude=".git*" --exclude="_middleman*" --exclude=".DS_Store" --exclude="Rakefile" ../../andimal andimal@andimal.webfactional.com:/home/andimal/webapps/andimal_ghost_0_4/ghost/content/themes'
+  end
+
+  task :upload do
+    sh 'rsync -av --delete --exclude=".git*" --exclude="_middleman*" --exclude=".DS_Store" --exclude="Rakefile" ../../andimal andimal@andimal.webfactional.com:/home/andimal/webapps/andimal_ghost_0_4/ghost/content/themes'
+  end
+
+  task deploy_dry_run: %w[build upload_dry_run]
+
+  task deploy: %w[build upload]
