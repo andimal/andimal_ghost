@@ -1,0 +1,39 @@
+- if build?
+  {{!< default}}
+  - post = nil
+  {{#post}}
+
+%header.post-header{style: "background-image: url(#{blog_cover})", data: {stellar_background_ratio: "0.5"}}
+  .header-inner.container-fluid
+    = link_to root_url do
+      %i.icon-andimal
+
+    .col-sm-10.col-sm-centered
+      %time{datetime: post_published_at(post)}
+        %span= display_post_published_at(post)
+      %h1= post_title(post)
+
+%main.content.container-fluid{role: "main"}
+  %article.col-sm-10.col-md-8.col-sm-centered{class: "{{post_class}}"}
+
+    .row
+      - if build?
+        {{#foreach tags}}
+        %span.tag {{name}}
+        {{/foreach}}
+
+      -else
+        - post['tags'].each do |tag|
+          %span.tag= tag.first
+
+    %section.post-content.margin-top-20= post_content(post)
+    
+- if build?
+  {{/post}}
+
+-#.container-fluid
+-#  .post-nav.row.col-sm-10.col-sm-centered.no-padding
+-#    = link_to "#", class: "col-sm-6 post-nav-links no-padding" do
+-#      Prev Article
+-#    = link_to "#", class: "col-sm-6 post-nav-links no-padding pull-right" do
+-#      Next Article

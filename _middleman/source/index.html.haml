@@ -1,0 +1,16 @@
+- if build?
+  {{!< default}}
+
+= partial "layouts/header"
+
+%main.content.container-fluid{role: "main"}
+
+  - if build?
+    - post = nil
+    {{#foreach posts}}
+    = partial "home_post", locals: {post: post}
+    {{/foreach}}
+
+  - else
+    - @posts.take(6).each do |post|
+      = partial "home_post", locals: {post: post}

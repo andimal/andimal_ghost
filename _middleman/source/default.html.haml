@@ -1,0 +1,57 @@
+!!!
+%html
+  %head
+    %meta{charset: "UTF-8", content: "text/html", "http-equiv" => "Content-Type"}
+    %meta{content: "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    
+    %title
+      - if build?
+        {{meta_title}}
+      - else
+        = data.page.title
+
+    %meta{content: blog_description, name: "description"}
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
+
+    = javascript_include_tag 'http://yandex.st/highlightjs/8.0/highlight.min.js'
+
+    %script{src: "//use.typekit.net/qei1uqx.js", type: "text/javascript"}
+    :javascript
+      try{Typekit.load();}catch(e){}
+      hljs.initHighlightingOnLoad()
+
+    = stylesheet_link_tag 'application'
+    
+    - if build?
+      {{ghost_head}}
+
+  %body
+    -# = partial "layouts/header"
+    
+    - if build?
+      {{{body}}}
+    -else
+      - if defined? post
+        = partial "post", locals: {post: post}
+      -else
+        = partial "index"
+
+    = partial "layouts/footer"
+
+    
+    - if build?
+      {{ghost_foot}}
+    
+    = javascript_include_tag 'application'
+    -# = javascript_include_tag 'https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js'
+    
+    - if build?
+      -# Google Analytics
+      :javascript
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-45369429-2', 'andimal.co');
+        ga('send', 'pageview');

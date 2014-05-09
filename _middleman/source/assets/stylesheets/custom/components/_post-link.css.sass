@@ -1,0 +1,35 @@
+.post-link
+  position: relative
+  text-decoration: none
+  color: inherit
+  overflow: hidden
+
+  &:hover
+    text-decoration: none
+    color: inherit
+
+    h2
+      color: $brand-primary-light
+
+    &:after
+      bottom: 1px
+
+  &:after
+    content: ""
+    position: absolute
+    bottom: -10px
+    left: 10%
+    width: 80%
+    height: 10px
+    background-color: $brand-primary-light
+    +transition(all 0.1s ease-in-out)
+
+  h2
+    +transition(all 0.1s ease-in-out)
+
+  article
+    border-bottom: 1px solid gray
+
+  i
+    font-weight: 300
+    color: lighten($text-color, 20%)

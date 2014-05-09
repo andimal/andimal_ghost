@@ -1,0 +1,21 @@
+= link_to post_slug(post), class: "post-link row" do
+  %article.col-sm-10.col-sm-centered
+    %time{datetime: post_published_at(post)}
+      %span= display_post_published_at(post)
+    %h2.post-title= post_title(post)
+    
+    .row
+      - if build?
+        {{#foreach tags}}
+        %span.tag {{name}}
+        {{/foreach}}
+
+      -else
+        - post['tags'].each do |tag|
+          %span.tag= tag.first
+
+    %i.block.margin-top-20
+      - if build?
+        {{excerpt words="40"}}...
+      -else
+        = "#{Nokogiri::HTML( post_content(post) ).text[0,300]}..."
