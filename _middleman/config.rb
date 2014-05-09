@@ -81,10 +81,6 @@ end
 # Build-specific configuration
 configure :build do
   ignore 'images/*.psd'
-  ignore 'stylesheets/lib/*'
-  ignore 'stylesheets/vendor/*'
-  ignore 'javascripts/lib/*'
-  ignore 'javascripts/vendor/*'
 
   # For example, change the Compass output style for deployment
   activate :minify_css
@@ -107,6 +103,8 @@ configure :build do
   # set :http_path, "/Content/images/"
 
   after_build do |builder|
+    FileUtils.rm_rf("#{build_dir}/assets/javascripts/custom")
+    FileUtils.rm_rf("#{build_dir}/assets/javascripts/vendor")
     FileUtils.mv("#{build_dir}/default.html", "#{build_dir}/default.hbs")
     FileUtils.mv("#{build_dir}/index.html", "#{build_dir}/index.hbs")
     FileUtils.mv("#{build_dir}/post.html", "#{build_dir}/post.hbs")
