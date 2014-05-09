@@ -7,7 +7,7 @@ gem 'font-awesome-middleman'
 gem 'jquery-middleman'
 gem "middleman", "~>3.1.6"
 gem "middleman-livereload", "~> 3.1.0"
-gem "manhattan", github: "kohactive/manhattan", branch: "0-4-0"
+gem "manhattan", github: "kohactive/manhattan", branch: "0-4-2"
 gem "nokogiri"
 gem "primordial", github: "johnkoht/primordial"
 
